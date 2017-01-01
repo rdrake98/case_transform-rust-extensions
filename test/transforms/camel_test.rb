@@ -60,10 +60,6 @@ describe CaseTransform do
             expected: obj
           },
           {
-            value: nil,
-            expected: nil
-          },
-          {
             value: [
               { some_value: 'value' }
             ],
@@ -76,6 +72,7 @@ describe CaseTransform do
           result = CaseTransform.camel(s[:value])
           assert_equal s[:expected], result
         end
+        assert_nil(CaseTransform.camel(nil))
       end
     end
   end
